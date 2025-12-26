@@ -1,0 +1,8 @@
+pandas
+numpy
+torch
+lightning
+chemprop
+scikit-learn
+pubchempy
+tqdm 
