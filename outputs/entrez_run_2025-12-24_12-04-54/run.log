@@ -1,0 +1,96 @@
+2025-12-24 12:04:54,517 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\run.log
+2025-12-24 12:04:54,517 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54
+2025-12-24 12:04:54,519 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-12-24_12-04-54
+2025-12-24 12:04:54,519 - INFO - 接收到 9 个独特的EntrezID，开始查找正样本...
+2025-12-24 12:04:54,519 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 9 个EntrezID相关的InChIKey...
+2025-12-24 12:04:55,599 - INFO - 成功找到 2926 个独特的InChIKey作为正样本。
+2025-12-24 12:04:55,602 - INFO - 正在从本地文件加载SMILES数据: D:\TCM\D12_InChIKey.tsv
+2025-12-24 12:04:56,807 - INFO - 成功加载并缓存 123647 条InChIKey-SMILES映射。
+2025-12-24 12:04:56,824 - INFO - 从本地文件中，成功为 2926 / 2926 个独立的InChIKey找到SMILES。
+2025-12-24 12:04:56,830 - INFO - 步骤完成：确定正样本数量为 2926。
+2025-12-24 12:04:56,830 - INFO - 正在加载完整的未标记样本库: D:\TCM\DA0C.Y\herb_project\chembl29.csv
+2025-12-24 12:05:01,102 - INFO - 去除与正样本重复的项后，可用的未标记样本数: 2082890
+2025-12-24 12:05:01,103 - INFO - 下一步：根据1:10的比例，需要从未标记样本中随机抽取 29260 个。
+2025-12-24 12:05:01,190 - INFO - 已成功随机抽取 29260 个未标记样本。
+2025-12-24 12:05:01,190 - INFO - 正在合并正样本和抽样后的未标记样本...
+2025-12-24 12:05:01,192 - INFO - 最终训练集总样本数: 32186
+2025-12-24 12:05:01,192 - INFO - 样本比例 (Positive:Unlabeled) 约为 1:10
+2025-12-24 12:05:01,281 - INFO - 已将按比例准备好的训练数据保存到: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\prepared_training_data.csv
+2025-12-24 12:05:01,361 - INFO - 开始PU-Bagging集成模型训练...
+2025-12-24 12:05:10,358 - INFO - 将并行训练 10 个模型...
+2025-12-24 12:18:14,024 - INFO - 所有基学习器训练完成。
+2025-12-24 12:18:15,322 - INFO - 正在加载中药化合物库: D:\TCM\D9_CHP_InChIKey.tsv
+2025-12-24 12:18:15,596 - INFO - 从本地文件中，成功为 41081 / 41081 个独立的InChIKey找到SMILES。
+2025-12-24 12:18:15,610 - INFO - 开始使用模型集成进行预测，目标数据量: 41081...
+2025-12-24 12:18:25,837 - INFO - 正在使用模型 fold_0.ckpt 进行预测...
+2025-12-24 12:18:26,100 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:18:26,117 - INFO - GPU available: False, used: False
+2025-12-24 12:18:26,117 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:18:26,117 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:19:18,564 - INFO - 正在使用模型 fold_1.ckpt 进行预测...
+2025-12-24 12:19:18,602 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:19:18,620 - INFO - GPU available: False, used: False
+2025-12-24 12:19:18,620 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:19:18,621 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:20:11,238 - INFO - 正在使用模型 fold_2.ckpt 进行预测...
+2025-12-24 12:20:11,281 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:20:11,299 - INFO - GPU available: False, used: False
+2025-12-24 12:20:11,300 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:20:11,300 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:21:03,403 - INFO - 正在使用模型 fold_3.ckpt 进行预测...
+2025-12-24 12:21:03,443 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:21:03,458 - INFO - GPU available: False, used: False
+2025-12-24 12:21:03,459 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:21:03,459 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:21:55,733 - INFO - 正在使用模型 fold_4.ckpt 进行预测...
+2025-12-24 12:21:55,767 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:21:55,786 - INFO - GPU available: False, used: False
+2025-12-24 12:21:55,786 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:21:55,786 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:22:48,118 - INFO - 正在使用模型 fold_5.ckpt 进行预测...
+2025-12-24 12:22:48,160 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:22:48,179 - INFO - GPU available: False, used: False
+2025-12-24 12:22:48,179 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:22:48,179 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:23:41,306 - INFO - 正在使用模型 fold_6.ckpt 进行预测...
+2025-12-24 12:23:41,341 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:23:41,358 - INFO - GPU available: False, used: False
+2025-12-24 12:23:41,358 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:23:41,358 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:24:34,336 - INFO - 正在使用模型 fold_7.ckpt 进行预测...
+2025-12-24 12:24:34,372 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:24:34,389 - INFO - GPU available: False, used: False
+2025-12-24 12:24:34,390 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:24:34,390 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:25:26,949 - INFO - 正在使用模型 fold_8.ckpt 进行预测...
+2025-12-24 12:25:26,983 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:25:27,000 - INFO - GPU available: False, used: False
+2025-12-24 12:25:27,000 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:25:27,000 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:26:19,388 - INFO - 正在使用模型 fold_9.ckpt 进行预测...
+2025-12-24 12:26:19,419 - INFO - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+2025-12-24 12:26:19,440 - INFO - GPU available: False, used: False
+2025-12-24 12:26:19,440 - INFO - TPU available: False, using: 0 TPU cores
+2025-12-24 12:26:19,440 - INFO - HPU available: False, using: 0 HPUs
+2025-12-24 12:27:11,743 - INFO - 所有模型的预测已完成，并计算了集成平均分。
+2025-12-24 12:27:11,967 - INFO - 化合物预测分数已保存至: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\compound_predictions.csv
+2025-12-24 12:27:11,967 - INFO - 开始对中药进行评分和排名...
+2025-12-24 12:27:11,972 - INFO - 正在加载化合物预测分数: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\compound_predictions.csv
+2025-12-24 12:27:12,060 - INFO - 预测文件中已包含 CHP_ID 列，直接使用...
+2025-12-24 12:27:12,065 - INFO - 正在按中药ID (CHP_ID) 聚合分数...
+2025-12-24 12:27:13,279 - INFO - 正在加载中药名称: D:\TCM\D6_Chinese_herbal_pieces.tsv
+2025-12-24 12:27:13,528 - INFO - 已生成带中药名称的化合物预测文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\compound_predictions_with_names.csv
+2025-12-24 12:27:13,530 - INFO - 正在生成多种排名方式...
+2025-12-24 12:27:13,540 - INFO - 平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_avg_score.csv
+2025-12-24 12:27:13,555 - INFO - 贝叶斯平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_adj_avg_score.csv
+2025-12-24 12:27:13,575 - INFO - 有效成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_effective_avg.csv
+2025-12-24 12:27:13,595 - INFO - 高质量成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_high_quality_avg.csv
+2025-12-24 12:27:13,609 - INFO - 超高质量成分数量排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_ultra_high_count.csv
+2025-12-24 12:27:13,625 - INFO - 超高质量成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_ultra_high_avg.csv
+2025-12-24 12:27:13,655 - INFO - 综合排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_comprehensive.csv
+2025-12-24 12:27:13,667 - INFO - 质量比例排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_quality_ratio.csv
+2025-12-24 12:27:13,684 - INFO - 最高成分分数排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_max_score.csv
+2025-12-24 12:27:13,742 - INFO - 汇总报告已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\ranking_summary.txt
+2025-12-24 12:27:13,743 - INFO - 最终中药排名已生成并保存至: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_comprehensive.csv
+2025-12-24 12:27:13,749 - INFO - ===== 流程成功结束！ =====
+2025-12-24 12:27:13,749 - INFO - 最终的中药排名报告已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-12-24_12-04-54\herb_ranking_comprehensive.csv

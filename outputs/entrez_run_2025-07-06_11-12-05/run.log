@@ -1,0 +1,47 @@
+2025-07-06 11:12:05,625 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\run.log
+2025-07-06 11:12:05,625 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05
+2025-07-06 11:12:05,625 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05
+2025-07-06 11:12:05,625 - INFO - 接收到 5 个独特的EntrezID，开始查找正样本...
+2025-07-06 11:12:05,625 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 5 个EntrezID相关的InChIKey...
+2025-07-06 11:12:06,932 - INFO - 成功找到 1243 个独特的InChIKey作为正样本。
+2025-07-06 11:12:06,932 - INFO - 正在从本地文件加载SMILES数据: D:\TCM\D12_InChIKey.tsv
+2025-07-06 11:12:08,341 - INFO - 成功加载并缓存 123647 条InChIKey-SMILES映射。
+2025-07-06 11:12:08,363 - INFO - 从本地文件中，成功为 1243 / 1243 个独立的InChIKey找到SMILES。
+2025-07-06 11:12:08,367 - INFO - 步骤完成：确定正样本数量为 1243。
+2025-07-06 11:12:08,367 - INFO - 正在加载完整的未标记样本库: D:\TCM\DA0C.Y\yazhou.csv
+2025-07-06 11:12:08,457 - INFO - 去除与正样本重复的项后，可用的未标记样本数: 47577
+2025-07-06 11:12:08,457 - INFO - 下一步：根据1:10的比例，需要从未标记样本中随机抽取 12430 个。
+2025-07-06 11:12:08,462 - INFO - 已成功随机抽取 12430 个未标记样本。
+2025-07-06 11:12:08,462 - INFO - 正在合并正样本和抽样后的未标记样本...
+2025-07-06 11:12:08,465 - INFO - 最终训练集总样本数: 13673
+2025-07-06 11:12:08,465 - INFO - 样本比例 (Positive:Unlabeled) 约为 1:10
+2025-07-06 11:12:08,511 - INFO - 已将按比例准备好的训练数据保存到: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\prepared_training_data.csv
+2025-07-06 11:12:08,513 - INFO - 开始PU-Bagging集成模型训练...
+2025-07-06 11:12:12,846 - INFO - 将并行训练 10 个模型...
+2025-07-06 11:17:59,530 - INFO - 所有基学习器训练完成。
+2025-07-06 11:18:00,070 - INFO - 正在加载中药化合物库: D:\TCM\D9_CHP_InChIKey.csv
+2025-07-06 11:18:00,071 - ERROR - 在执行过程中发生严重错误: [Errno 2] No such file or directory: 'D:\\TCM\\D9_CHP_InChIKey.csv'
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\main.py", line 85, in main
+    compound_predictions_path = predictor.generate_compound_predictions(trained_models_dir, config, run_output_dir)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\modeling\predictor.py", line 66, in generate_compound_predictions
+    df_compounds = pd.read_csv(herb_compounds_path, usecols=[config.INCHIKEY_COL, config.CHP_ID_COL])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\TCM\\D9_CHP_InChIKey.csv'
+2025-07-06 11:18:00,093 - INFO - ===== 流程因错误而终止 =====

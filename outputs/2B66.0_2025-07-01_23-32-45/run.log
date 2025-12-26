@@ -1,0 +1,7 @@
+2025-07-01 23:32:45,207 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\2B66.0_2025-07-01_23-32-45\run.log
+2025-07-01 23:32:45,210 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\2B66.0_2025-07-01_23-32-45
+2025-07-01 23:32:45,210 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\2B66.0_2025-07-01_23-32-45
+2025-07-01 23:32:45,211 - INFO - 开始为ICD11代码 '2B66.0' 查找正样本...
+2025-07-01 23:32:45,211 - INFO - 正在读取ICD-CUI映射文件: D:\TCM\D5_CPM_ICD11.tsv
+2025-07-01 23:32:45,219 - ERROR - 在查找正样本过程中发生未知错误: Usecols do not match columns, columns expected but not found: ['CUI']
+2025-07-01 23:32:45,220 - ERROR - 未能找到任何正样本，流程终止。

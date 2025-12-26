@@ -1,0 +1,37 @@
+2025-07-05 11:47:00,233 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-05_11-47-00\run.log
+2025-07-05 11:47:00,233 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-05_11-47-00
+2025-07-05 11:47:00,233 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-05_11-47-00
+2025-07-05 11:47:00,233 - INFO - 接收到 5 个独特的EntrezID，开始查找正样本...
+2025-07-05 11:47:00,233 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 5 个EntrezID相关的InChIKey...
+2025-07-05 11:47:01,474 - INFO - 成功找到 1243 个独特的InChIKey作为正样本。
+2025-07-05 11:47:01,476 - INFO - 开始为 1243 个 InChIKey 从 PubChem API 获取SMILES...
+2025-07-05 11:47:18,011 - WARNING - 处理InChIKey HBBDHJOSZGOTBV-UHFFFAOYSA-N 时出错: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+2025-07-05 11:47:20,676 - WARNING - 处理InChIKey CBPNZQVSJQDFBE-UHFFFAOYSA-N 时出错: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+2025-07-05 11:48:40,778 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 11:56:03,529 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 11:58:52,954 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:00:55,625 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:02:29,055 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:03:08,239 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:03:44,219 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:04:18,684 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:04:47,692 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:07:51,108 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:09:35,114 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:09:45,825 - WARNING - 处理InChIKey VNDWQCSOSCCWIP-UHFFFAOYSA-N 时出错: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+2025-07-05 12:12:01,624 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:13:28,812 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:14:38,008 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:15:18,879 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:18:51,917 - INFO - 'PUGREST.NotFound: No CID found that matches the given InChI key'
+2025-07-05 12:20:38,835 - INFO - 成功为 0 / 1243 个独特的InChIKey找到了SMILES。
+2025-07-05 12:20:38,845 - ERROR - 无法为任何正样本找到SMILES，无法继续。
+2025-07-05 12:20:38,845 - ERROR - 在执行过程中发生严重错误: 无法为任何正样本找到SMILES，无法继续。
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\main.py", line 79, in main
+    training_data_path = data_preparer.prepare_training_data(positive_samples_df, config, run_output_dir)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\data_pipeline\data_preparer.py", line 78, in prepare_training_data
+    raise ValueError("无法为任何正样本找到SMILES，无法继续。")
+ValueError: 无法为任何正样本找到SMILES，无法继续。
+2025-07-05 12:20:38,848 - INFO - ===== 流程因错误而终止 =====

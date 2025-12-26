@@ -1,0 +1,22 @@
+2025-07-06 12:50:56,167 - INFO - ===== 单独执行中药排名流程 =====
+2025-07-06 12:50:56,170 - INFO - Run ID: entrez_run_2025-07-06_11-12-05
+2025-07-06 12:50:56,170 - INFO - 输入文件: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05\compound_predictions.csv
+2025-07-06 12:50:56,172 - INFO - 输出目录: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05
+2025-07-06 12:50:56,172 - INFO - 开始对中药进行评分和排名...
+2025-07-06 12:50:56,172 - INFO - 正在加载化合物预测分数: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05\compound_predictions.csv
+2025-07-06 12:50:56,305 - INFO - 预测文件中已包含 CHP_ID 列，直接使用...
+2025-07-06 12:50:56,321 - INFO - 正在按中药ID (CHP_ID) 聚合分数...
+2025-07-06 12:50:57,976 - INFO - 正在加载中药名称: D:\TCM\D6_Chinese_herbal_pieces.tsv
+2025-07-06 12:50:58,006 - INFO - 正在生成多种排名方式...
+2025-07-06 12:50:58,024 - INFO - 总分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_total_score.csv
+2025-07-06 12:50:58,042 - INFO - 有效成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_effective_avg.csv
+2025-07-06 12:50:58,063 - INFO - 高质量成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_high_quality_avg.csv
+2025-07-06 12:50:58,072 - INFO - 超高质量成分数量排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_ultra_high_count.csv
+2025-07-06 12:50:58,093 - INFO - 超高质量成分平均分排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_ultra_high_avg.csv
+2025-07-06 12:50:58,121 - INFO - 综合排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_comprehensive.csv
+2025-07-06 12:50:58,135 - INFO - 质量比例排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_quality_ratio.csv
+2025-07-06 12:50:58,154 - INFO - 最高成分分数排名已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_max_score.csv
+2025-07-06 12:50:58,212 - INFO - 汇总报告已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\ranking_summary.txt
+2025-07-06 12:50:58,214 - INFO - 最终中药排名已生成并保存至: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_comprehensive.csv
+2025-07-06 12:50:58,214 - INFO - ===== 排名流程成功结束！ =====
+2025-07-06 12:50:58,214 - INFO - 最终的中药排名报告已生成: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_11-12-05\herb_ranking_comprehensive.csv

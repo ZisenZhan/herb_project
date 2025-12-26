@@ -1,0 +1,78 @@
+2025-07-06 12:02:14,987 - INFO - ===== 使用run_id 'D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05' 继续执行预测和排名 =====
+2025-07-06 12:02:14,987 - INFO - ===== 步骤 4: 使用模型进行预测 =====
+2025-07-06 12:02:14,987 - INFO - 正在加载中药化合物库: D:\TCM\D9_CHP_InChIKey.tsv
+2025-07-06 12:02:14,991 - ERROR - 在执行预测过程中发生严重错误: Usecols do not match columns, columns expected but not found: ['InChIKey', 'CHP_ID']
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\predict_only.py", line 63, in predict_main
+    compound_predictions_path = predictor.generate_compound_predictions(run_models_dir, config, run_output_dir)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\modeling\predictor.py", line 66, in generate_compound_predictions
+    df_compounds = pd.read_csv(herb_compounds_path, usecols=[config.INCHIKEY_COL, config.CHP_ID_COL])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\base_parser.py", line 988, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['InChIKey', 'CHP_ID']
+2025-07-06 12:02:15,015 - INFO - ===== 流程因错误而终止 =====
+2025-07-06 12:05:25,899 - INFO - ===== 使用run_id 'D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05' 继续执行预测和排名 =====
+2025-07-06 12:05:25,899 - INFO - ===== 步骤 4: 使用模型进行预测 =====
+2025-07-06 12:05:25,899 - INFO - 正在加载中药化合物库: D:\TCM\D9_CHP_InChIKey.tsv
+2025-07-06 12:05:26,080 - INFO - 正在从本地文件加载SMILES数据: D:\TCM\D12_InChIKey.tsv
+2025-07-06 12:05:27,241 - INFO - 成功加载并缓存 123647 条InChIKey-SMILES映射。
+2025-07-06 12:05:27,362 - INFO - 从本地文件中，成功为 41081 / 41081 个独立的InChIKey找到SMILES。
+2025-07-06 12:05:27,379 - INFO - 开始使用模型集成进行预测，目标数据量: 41081...
+2025-07-06 12:05:39,530 - INFO - 正在使用模型 fold_0.ckpt 进行预测...
+2025-07-06 12:06:40,932 - INFO - 正在使用模型 fold_1.ckpt 进行预测...
+2025-07-06 12:07:45,722 - INFO - 正在使用模型 fold_2.ckpt 进行预测...
+2025-07-06 12:08:47,510 - INFO - 正在使用模型 fold_3.ckpt 进行预测...
+2025-07-06 12:09:50,353 - INFO - 正在使用模型 fold_4.ckpt 进行预测...
+2025-07-06 12:10:55,770 - INFO - 正在使用模型 fold_5.ckpt 进行预测...
+2025-07-06 12:12:00,590 - INFO - 正在使用模型 fold_6.ckpt 进行预测...
+2025-07-06 12:13:05,786 - INFO - 正在使用模型 fold_7.ckpt 进行预测...
+2025-07-06 12:14:11,385 - INFO - 正在使用模型 fold_8.ckpt 进行预测...
+2025-07-06 12:15:15,816 - INFO - 正在使用模型 fold_9.ckpt 进行预测...
+2025-07-06 12:16:17,503 - INFO - 所有模型的预测已完成，并计算了集成平均分。
+2025-07-06 12:16:17,735 - INFO - 化合物预测分数已保存至: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05\compound_predictions.csv
+2025-07-06 12:16:17,735 - INFO - ===== 步骤 5: 排名中药 =====
+2025-07-06 12:16:17,735 - INFO - 开始对中药进行评分和排名...
+2025-07-06 12:16:17,735 - INFO - 正在加载化合物预测分数: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_11-12-05\compound_predictions.csv
+2025-07-06 12:16:17,827 - INFO - 正在加载中药-化合物映射: D:\TCM\D9_CHP_InChIKey.tsv
+2025-07-06 12:16:17,827 - ERROR - 在执行预测过程中发生严重错误: Usecols do not match columns, columns expected but not found: ['InChIKey', 'CHP_ID']
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\predict_only.py", line 67, in predict_main
+    final_ranking_path = ranker.rank_herbs(compound_predictions_path, config, run_output_dir)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\scoring\ranker.py", line 27, in rank_herbs
+    df_herb_map = pd.read_csv(herb_compounds_path, usecols=[config.INCHIKEY_COL, config.CHP_ID_COL])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\base_parser.py", line 988, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['InChIKey', 'CHP_ID']
+2025-07-06 12:16:17,835 - INFO - ===== 流程因错误而终止 =====

@@ -1,0 +1,9 @@
+2025-07-05 15:29:42,094 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-05_15-29-42\run.log
+2025-07-05 15:29:42,094 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-05_15-29-42
+2025-07-05 15:29:42,094 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-05_15-29-42
+2025-07-05 15:29:42,094 - INFO - 接收到 5 个独特的EntrezID，开始查找正样本...
+2025-07-05 15:29:42,094 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 5 个EntrezID相关的InChIKey...
+2025-07-05 15:29:43,321 - INFO - 成功找到 1243 个独特的InChIKey作为正样本。
+2025-07-05 15:29:43,336 - INFO - SMILES缓存文件 D:\TCM\DA0C.Y\herb_project\smiles_cache.csv 不存在，将创建新文件。
+2025-07-05 15:29:43,367 - INFO - 总共需要 1243 个SMILES。其中 0 个已在缓存中找到。
+2025-07-05 15:29:43,367 - INFO - 需要从PubChem API为 1243 个新的InChIKey获取SMILES...

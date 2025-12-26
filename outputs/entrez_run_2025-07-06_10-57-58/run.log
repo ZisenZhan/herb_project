@@ -1,0 +1,37 @@
+2025-07-06 10:57:58,514 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_10-57-58\run.log
+2025-07-06 10:57:58,514 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_10-57-58
+2025-07-06 10:57:58,514 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_10-57-58
+2025-07-06 10:57:58,514 - INFO - 接收到 5 个独特的EntrezID，开始查找正样本...
+2025-07-06 10:57:58,514 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 5 个EntrezID相关的InChIKey...
+2025-07-06 10:57:59,807 - INFO - 成功找到 1243 个独特的InChIKey作为正样本。
+2025-07-06 10:57:59,807 - INFO - 正在从本地文件加载SMILES数据: D:\TCM\D12_InChIKey.tsv
+2025-07-06 10:58:00,972 - INFO - 成功加载并缓存 123647 条InChIKey-SMILES映射。
+2025-07-06 10:58:01,028 - INFO - 从本地文件中，成功为 1243 / 1243 个独立的InChIKey找到SMILES。
+2025-07-06 10:58:01,050 - INFO - 步骤完成：确定正样本数量为 1243。
+2025-07-06 10:58:01,050 - INFO - 正在加载完整的未标记样本库: D:\TCM\DA0C.Y\yazhou.csv
+2025-07-06 10:58:01,054 - ERROR - 在执行过程中发生严重错误: Usecols do not match columns, columns expected but not found: ['SMILES']
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\main.py", line 79, in main
+    training_data_path = data_preparer.prepare_training_data(positive_samples_df, config, run_output_dir)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\data_pipeline\data_preparer.py", line 97, in prepare_training_data
+    df_unlabeled = pd.read_csv(unlabeled_path, usecols=[config.SMILES_COL])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 140, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\base_parser.py", line 988, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['SMILES']
+2025-07-06 10:58:01,061 - INFO - ===== 流程因错误而终止 =====

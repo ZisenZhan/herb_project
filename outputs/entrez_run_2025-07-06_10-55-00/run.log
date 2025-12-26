@@ -1,0 +1,52 @@
+2025-07-06 10:55:00,758 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_10-55-00\run.log
+2025-07-06 10:55:00,758 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\entrez_run_2025-07-06_10-55-00
+2025-07-06 10:55:00,758 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\entrez_run_2025-07-06_10-55-00
+2025-07-06 10:55:00,758 - INFO - 接收到 5 个独特的EntrezID，开始查找正样本...
+2025-07-06 10:55:00,758 - INFO - 正在从 D:\TCM\D13_InChIKey_EntrezID.tsv 中查找与 5 个EntrezID相关的InChIKey...
+2025-07-06 10:55:02,220 - INFO - 成功找到 1243 个独特的InChIKey作为正样本。
+2025-07-06 10:55:02,220 - INFO - 正在从本地文件加载SMILES数据: D:\TCM\D12_InChIKey.tsv
+2025-07-06 10:55:02,229 - ERROR - 在执行过程中发生严重错误: Usecols do not match columns, columns expected but not found: ['smiles']
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\python_parser.py", line 607, in _handle_usecols
+    col_indices.append(usecols_key.index(col))
+                       ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 'smiles' is not in list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TCM\DA0C.Y\herb_project\main.py", line 79, in main
+    training_data_path = data_preparer.prepare_training_data(positive_samples_df, config, run_output_dir)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\data_pipeline\data_preparer.py", line 86, in prepare_training_data
+    df_positive = get_smiles_for_inchikeys(positive_inchikeys_df, config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TCM\DA0C.Y\herb_project\data_pipeline\data_preparer.py", line 44, in get_smiles_for_inchikeys
+    _load_smiles_lookup(config)
+  File "D:\TCM\DA0C.Y\herb_project\data_pipeline\data_preparer.py", line 28, in _load_smiles_lookup
+    df = pd.read_csv(smiles_tsv_path, sep='\\t', header=0, usecols=[inchikey_col, smiles_col], engine='python')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\python_parser.py", line 133, in __init__
+    ) = self._infer_columns()
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\python_parser.py", line 542, in _infer_columns
+    columns = self._handle_usecols(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\python_parser.py", line 609, in _handle_usecols
+    self._validate_usecols_names(self.usecols, usecols_key)
+  File "D:\anaconda3\envs\herb\Lib\site-packages\pandas\io\parsers\base_parser.py", line 988, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['smiles']
+2025-07-06 10:55:02,237 - INFO - ===== 流程因错误而终止 =====

@@ -1,0 +1,12 @@
+2025-07-01 23:48:10,517 - INFO - 日志将同时输出到控制台和文件: D:\TCM\DA0C.Y\herb_project\outputs\2B6E.Y_2025-07-01_23-48-10\run.log
+2025-07-01 23:48:10,517 - INFO - 本次运行的输出将保存在: D:\TCM\DA0C.Y\herb_project\outputs\2B6E.Y_2025-07-01_23-48-10
+2025-07-01 23:48:10,518 - INFO - 本次运行的模型将保存在: D:\TCM\DA0C.Y\herb_project\models\2B6E.Y_2025-07-01_23-48-10
+2025-07-01 23:48:10,518 - INFO - 开始为ICD11代码 '2B6E.Y' 通过三通路模型查找正样本...
+2025-07-01 23:48:10,518 - INFO - [CUI Path] 正在读取ICD映射文件: D:\TCM\D19_ICD11_CUI.tsv
+2025-07-01 23:48:10,633 - WARNING - [CUI Path] 未找到 ICD11 '2B6E.Y' 对应的 CUI。
+2025-07-01 23:48:10,633 - INFO - [MeSH Path] 正在读取ICD映射文件: D:\TCM\D20_ICD11_MeSH.tsv
+2025-07-01 23:48:10,643 - WARNING - [MeSH Path] 未找到 ICD11 '2B6E.Y' 对应的 MeSH。
+2025-07-01 23:48:10,643 - INFO - [DOID Path] 正在读取ICD映射文件: D:\TCM\D21_ICD11_DOID.tsv
+2025-07-01 23:48:10,649 - WARNING - [DOID Path] 未找到 ICD11 '2B6E.Y' 对应的 DOID。
+2025-07-01 23:48:10,650 - ERROR - 所有通路均未找到任何相关的EntrezID，流程终止。
+2025-07-01 23:48:10,650 - ERROR - 未能找到任何正样本，流程终止。
